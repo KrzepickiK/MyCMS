@@ -1,0 +1,134 @@
+body 
+{
+    background-color: #FFFF80;
+    margin: 0;
+    padding: 0;
+    text-align:center;
+}
+
+div 
+{
+    font: verdana 12px #000;
+    position:relative;
+}
+a 
+{
+    text-decoration: none;
+}
+#container 
+{
+    background: lime;
+    margin:0 auto;
+    padding:0 0px 0 0px;
+    position:relative;
+    width:1024px;
+	height:100%;
+    text-align:left;
+    clear: both;
+	background-color:#FFFFFF;
+}
+
+#naglowek 
+{
+    background: #804000;
+    width:1024px;
+    height:181px;
+    margin-bottom:0px;
+}
+#menu 
+{
+    background: #FF8040;
+    width:auto;
+    height:33px;
+    margin-bottom:0px;
+    margin-top:-16px;
+}
+#prawy
+{
+    background: #444;
+    width:250px;
+	height:100%;
+    float:right;
+	padding-right:0px;
+	margin-right:28px;
+    margin-top: 5px;
+    min-height: 250px;
+}
+
+#srodek 
+{
+    background: #fff;
+    color: #444;
+    width:720px;
+	height:auto;
+    float:left;
+	margin-left:13px;
+	margin-top:5px;
+	margin-bottom:40px;
+    min-height: 250px;
+}
+#stopka 
+{
+    background: green;
+    clear:both;
+	font-size:11px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	height:28px;
+	color:#FFFFFF;
+	padding-top:8px;
+	padding-right:30px;
+}
+
+
+
+
+/*PODSTRONY*/
+.zmien a, .usun a, .tytul a
+{
+    color: #ccc;
+}
+
+.zmien a:hover, .usun a:hover, .tytul a:hover
+{
+    color: #fff;
+    font-weight: bold;
+}
+
+span.autor{}
+span.zalacznik{}
+
+.zalacznik .pokazsie span 
+{
+    display: none;
+    padding: 2px 3px;
+    margin-left: 8px;
+    width: 330px;
+    overflow: hidden;
+}
+.zalacznik .pokazsie:hover span
+{
+    display: inline;
+    position: absolute;
+	margin: 5px 0 0 5px;
+    z-index:999;
+    color: #fff;
+}
+
+.pokazsie span {
+    display: none;
+    padding: 2px 3px;
+    margin-left: 8px;
+    width: 130px;
+}
+.pokazsie:hover span
+{
+    display: inline;
+    position: absolute;
+	margin: 5px 0 0 5px;
+    z-index:999;
+    color: #fff;
+}
+#zalaczniki_lista, #zalaczniki_lista td, th
+{
+    border-bottom: 1px solid #000;
+}

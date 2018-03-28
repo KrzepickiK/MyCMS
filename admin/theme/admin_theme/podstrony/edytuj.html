@@ -1,0 +1,77 @@
+﻿<?php
+if($widocznosc == true)
+{
+    $widocznosc = '<OPTION value="1">Tak</OPTION><OPTION value="0">Nie</OPTION>';
+}
+else
+{
+    $widocznosc = '<OPTION value="0">Nie</OPTION><OPTION value="1">Tak</OPTION>';
+}
+if($komentarze == true)
+{
+    $komentarze = '<OPTION value="1">Tak</OPTION><OPTION value="0">Nie</OPTION>';    
+}
+else
+{
+    $komentarze = '<OPTION value="0">Nie</OPTION><OPTION value="1">Tak</OPTION>';
+}
+if($menu == 1)
+{
+    $menu = '<OPTION value="1">Górne</OPTION><OPTION value="2">Boczne</OPTION>';
+}elseif($menu == 2)
+{
+    $menu = '<OPTION value="2">Boczne</OPTION><OPTION value="1">Górne</OPTION>';    
+}
+?>
+<h1>Edytuj podstronę:</h1>
+<form action="index.php?go=eps&id=<?php print $id; ?>" method="post" enctype="multipart/form-data">
+    Link (treść linka do strony): <br /><input type="text" name="link"  size="15" maxlength="14" value="<?php print $link ?>"/><br/><br/>
+    Tytuł: <br /><input type="text" name="tytul"  size="30" maxlength="25" value="<?php print $tytul ?>"/><br/><br/>
+    Treść podstrony: <br /><textarea name="tresc" rows="15" cols="90"><?php print $tresc ?></textarea><br />
+    Autor: <br /><input type="text" name="autorId"  size="30" maxlength="14" value="<?php print $autorNick['nick']?>"/><br />
+    <table>
+        <tr>
+            <td>Widoczność:</td>
+            <td><SELECT NAME="widocznosc" style="width: 80px;"><?php print $widocznosc ?></SELECT></td>
+        </tr>
+        <tr>
+            <td>Komentarze: </td>
+            <td><SELECT NAME="komentarze" style="width: 80px;"><?php print $komentarze ?></SELECT></td>
+        </tr>
+        <tr>
+            <td>W którym menu:</td>
+            <td><SELECT NAME="menu" style="width: 80px;"><?php print $menu ?></SELECT></td>
+        </tr>
+        <tr>
+            <td>Rodzic:</td>
+            <td><?php print $lista_rodzic ?></td>
+        </tr>
+    </table>
+    <input type="text" name="id" value="<?php print $id; ?>" style="visibility: hidden;"/>
+    
+
+<?php
+if($tr_zalacznik!='')
+{
+    print 
+    '<br /><br /><h2>Załączniki</h2><table id="zalaczniki_lista">
+        <tr>
+            <th style="width: 550px;">Nazwa pliku:</th><th>Usuń:</th><th>Zmień:</th>
+        </tr>
+        '.$tr_zalacznik.'
+    </table>';
+}
+?>
+<br /><br />
+<h2>Dodaj załącznik:</h2>
+    Załącz plik:<input type="checkbox" name="zalaczplik" value="1" onclick="document.getElementById('zal_form').style.display = this.checked ? 'block' : 'none'; this.form.elements['userfile'].disabled =  this.form.elements['zal_tytul'].disabled = this.form.elements['zal_opis'].disabled = !this.checked" />
+    <div id="zal_form" style="display: none">
+    <table style="float:left;">
+        <tr><td>Wybierz plik:</td><td><input type="file" name="userfile" disabled="disabled"/></td></tr>
+        <tr><td>Nazwa:</td><td><input type="text" name="zal_tytul"  size="30" maxlength="25" disabled="disabled"/></td></tr>
+        <tr><td>Opis:</td><td><input type="text" name="zal_opis"  size="100" maxlength="100" disabled="disabled"/></td></tr>
+        <tr><td>Tylko dla zalogowanych:</td><td><SELECT NAME="zal_dostepnosc" style="width: 80px;"><OPTION value="1">Tak</OPTION><OPTION value="0">Nie</OPTION></SELECT></td></tr>
+    </table>
+    </div>
+<input type="submit" name="upload" class="przycisk" value="Zapisz zmiany" style="float:right; width: 100%; height:30px"/>
+</form>

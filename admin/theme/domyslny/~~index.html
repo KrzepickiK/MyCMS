@@ -1,0 +1,57 @@
+<?php $strona = $_GET['strona']; ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<?php wyswietl(head("$strona"));?>
+<link rel="stylesheet" type="text/css" href="themes/djcuba/style.css" />
+</head>
+<body>
+
+
+
+<div id="wrapper">
+    <div id="rurka">
+        <div class="kontener">
+            <div id="logo">
+            <p class="logo">Profesjonalizm w parze z do¶wiadczeniem!</p>
+            <p class="logo2">Dekoracje ¶wietlne | Oprawa muzyczna | Nag³ó¶nienie</p>
+            <p class="logo3">Jaki¶ fajny slogan zachêcaj±cy do zapoznania siê z ofert± ;)</p>
+            </div>
+        </div>
+    </div>
+<div id="reset" style="height: 200px;"></div>
+    <div class="kontener">
+        <div id="lmenu" style="z-index: 999;">
+            <ul class="menu">
+            <?php wyswietl(modul('menu.php')); ?>
+            </ul>
+        </div>
+        
+        <div id="tresc">
+            <?php wyswietl()
+        </div>
+    </div>
+</div>
+<div id="reset"></div>
+<div id="belkadol">
+    <div id="stopka">
+    <div class="info">
+        <marquee align="middle" scrollamount="4" width="100%"height="25">
+* * *&nbsp;
+Dzisiaj gram: Tu i TaM! ;)&nbsp; * * *&nbsp; 
+Zapraszam do obejrzenia galeri: <a href="#">GALERIA</a>&nbsp; 
+* * *&nbsp;
+Najbli¿sze eventy: 11.11.11 - Gdzie¶ | 22.22.22 - Gdzie¶ indziej | 33.33.33 - i tak dalej&nbsp; * * *&nbsp;
+</marquee>
+    </div>
+    <p class="kontakt">
+        <strong>DJ CUBA</strong><br />
+        <strong>tel:</strong> 123-456-789<br />
+        <strong>email:</strong> djcuba@mail.pl<br />
+        <strong>GG:</strong> 123456<br />
+    </p>
+    <p class="autor">Projekt i wykonanie:<br />oiKrzysiek<br /><strong>email:</strong> pgw.strony@gmail.com<br /><strong>GG:</strong> 9958464<br /><span><strong>www:</strong> <a href="http://pgw-strony.pl">pgw-strony.pl</a></span></p>
+    </div>
+</div>
+</body>
+</html>

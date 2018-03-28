@@ -1,0 +1,26 @@
+    <h1>Dodaj nową podstronę:</h1>
+    <form action="index.php?go=dps" method="post" style="color: red;">
+    Link (treść linka do strony): <br /><input type="text" name="link"  size="15" maxlength="14"/><br/><br/>
+    Tytuł: <br /><input type="text" name="tytul"  size="30" maxlength="25"/><br/><br/>
+    Treść podstrony: <br/><textarea name="tresc" rows="15" cols="90"></textarea><br />
+    Autor: <br /><input type="text" name="autorId"  size="30" maxlength="14"/><br />
+    <table style="float:left;">
+    <tr>
+        <td>Widoczność:</td>
+        <td><input type="checkbox" name="widocznosc" value="1" checked="" /></td>
+    </tr>
+    <tr>
+        <td>Komentarze:</td><td><input type="checkbox" name="komentarze" value="1" checked="" /></td>
+    </tr>
+    <tr>
+        <td>Pozycja w menu(nr):</td><td><input type="text" name="pozycja"  size="1" value="0"/></td>
+    </tr>
+    <tr>
+        <td>W którym menu:</td><td><SELECT NAME="menu" style="width: 80px;"><OPTION value="1">Górne</OPTION><OPTION value="2">Boczne</OPTION></td>
+    </tr>
+    <tr>
+        <td>Rodzic:</td><td><?php print $lista_rodzic ?></td>
+    </tr>
+    </table>
+    <input type="submit" class="przycisk" value="Dodaj podstronę" style="float:right; width: 100%; height:30px"/>
+    </form>

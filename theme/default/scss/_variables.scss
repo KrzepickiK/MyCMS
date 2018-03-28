@@ -1,0 +1,55 @@
+$root_font_size: 		18px;
+$root_font_size_small: 		16px;
+$root_line_height:		1.3;
+
+$font_small: 0.6rem;
+$font_large: 2rem;
+$font_x_large: 4rem;
+
+$table_border: 			2px solid #000;
+$table_highlight_color: #ddd;
+
+$container_max-width: 	1200px;
+
+$grid_padding: 			0;
+
+$color_font_primary: 	#333;
+$color_primary: 		#0c75ed;
+$color_gray: 			#727272;
+$color_black: 			#333;
+$color_white: 			#f9f9f9;
+$color_success: 		#00c603;
+$color_warning: 		#ff7a14;
+$color_danger: 			#fd0101;
+$color_info: 			#0198fd;
+$color_navbar_bg: 			rgba( 0, 0, 0, 0.8 );
+$color_navbar_text: 			#fff;
+
+$color_darken:	30%;
+$color_darken_min: 10%;
+$color_darken_max: 50%;
+
+$color_lighten: 20%;
+$color_lighten_min: 10%;
+$color_lightrn_max: 50%;
+
+$color_font_bright: 	lighten($color_font_primary,$color_lighten);
+$color_primary_bright: 	lighten($color_primary,$color_lighten);
+$color_gray_bright: 	lighten($color_gray,$color_lighten);
+$color_black_bright:    lighten($color_black, $color_lighten);
+$color_success_bright: 	lighten($color_success,$color_lighten);
+$color_warning_bright: 	lighten($color_warning,$color_lighten);
+$color_danger_bright: 	lighten($color_danger,$color_lighten);
+$color_info_bright: 	lighten($color_info,$color_lighten);
+
+$color_font_dark: 		darken($color_font_primary,$color_darken);
+$color_primary_dark: 	darken($color_primary,$color_darken_min);
+$color_gray_dark: 		darken($color_gray,$color_darken);
+$color_white_dark:		darken($color_white, $color_darken);
+$color_success_dark: 	darken($color_success,$color_darken_min);
+$color_warning_dark: 	darken($color_warning,$color_darken_min);
+$color_danger_dark: 	darken($color_danger,$color_darken_min);
+$color_info_dark: 		darken($color_info,$color_darken_min);
+
+
+$transition_default: 	0.5s all;

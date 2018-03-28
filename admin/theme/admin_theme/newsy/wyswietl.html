@@ -1,0 +1,74 @@
+﻿<div class="podstrona_mini" style="width: 210px; height:230px; border: 1px solid black; float:left; margin: 10px; display: block; ">
+    <div class="tytul" style="width: 100%; height: 30px; color: #fff; text-align: center; line-height: 30px; background:  #444;;">
+        <a href="<?php print '../index.php?go=newsy&id='.$newsId;?>" target="blank"><?php print $tytul;?></a>
+    </div>
+    <div class="tresc" style="width:100%; height: 170px;">
+        <table>
+        <tr>
+        <td>Autor:</td>
+        <td>
+            <span class="autor">
+                <div class="pokazsie">
+                    <?php print $autor['nick'] ?>
+                <span>
+                <table style="background: #444; border: none;">
+                    <tr>
+                        <td rowspan="6"><img src="../avatar/<?php print $autor['avatar'] ?>" width="100px"/></td>
+                        <td>Nick: <?php print $autor['nick'] ?></td>
+                    </tr>
+                    <tr>
+                        <td>Ranga: <?php print $autor['ranga'] ?></td>
+                    </tr>
+                    <tr>
+                        <td><?php print $autor['email'] ?></td>
+                    </tr>
+                    <tr>
+                        <td>Podstron: <?php print $autor['podstron'] ?></td>
+                    </tr>
+                    <tr>
+                        <td>Newsow: <?php print $autor['newsow'] ?></td>
+                    </tr>
+                </table>
+                </span>
+                </div>
+            </span>
+        </td>
+        </tr>
+        <tr>
+        <td>Data dodania:</td>
+        <td><?php print $data['dzien'].'.'.$data['miesiac'].'.'.$data['rok'];?></td>
+        </tr>
+        <tr>
+        <td>Komentarze:</td>
+        <td><?php if($komentarze == 1){print 'Włączone';}elseif($komentarze==0){print 'Wyłączone';}; ?></td>
+        </tr>
+        <tr>
+        <td>Widoczność:</td>
+        <td><?php if($widocznosc == 1){print 'Widoczny';}elseif($widocznosc==0){print 'Niewidoczny';}; ?></td>
+        </tr>
+        <tr>
+        <td>Rodzic:</td>
+        <td><?php print $rodzicLink; ?></td>
+        </tr>
+        <tr>
+        <td>Załączniki:</td>
+        <td>
+            <span class="zalacznik">
+                <div class="pokazsie">
+                    <?php if($zalaczniki == ''){print 'Brak';}else{print 'Są';} ?>
+                <span style="background: #444; border: none;">
+                    <?php if($zalaczniki == ''){print 'Brak';}else{print $zalaczniki;}?>
+                </span>
+                </div>
+            </span>
+        </td>
+        </tr>
+        </table>
+    </div>
+    <div class="zmien" style="float: left; width: 50%; height: 30px; color: #fff; text-align: center; line-height: 30px; background:  #444;;">
+        <a href="index.php?go=enf&id=<?php print $newsId; ?>">Edytuj</a>
+    </div>
+    <div class="usun" style="float:left; width: 50%; height: 30px; color: #fff; text-align: center; line-height: 30px; background:  #444;;">
+        <a href="index.php?go=un">Usuń</a>
+    </div>
+</div>

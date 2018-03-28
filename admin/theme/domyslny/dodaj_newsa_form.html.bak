@@ -1,0 +1,52 @@
+    <h1>Dodaj newsa:</h1>
+    <form action="index.php?go=dns" method="post" style="color: red;" enctype="multipart/form-data">
+    Tytu³: <br /><input type="text" name="tytul"  size="30" maxlength="25"/><br/><br/>
+    Treœæ newsa: <br /><textarea name="tresc" rows="15" cols="90"></textarea><br />
+    <table style="float:left;">
+    <tr>
+    <td>Wybierz ok³adkê newsa:</td>
+    </tr>
+    <tr>
+    <td><img src="../pliki/knigi.png" style="width: 100px;"/></td>
+    <td><img src="../pliki/icc.png" style="width: 100px;"/></td>
+    <td><img src="../pliki/pdf.png" style="width: 100px;"/></td>
+    <td><img src="../pliki/pytajnik.png" style="width: 100px;"/></td>
+    <td><img src="../pliki/pkp.png" style="width: 100px;"/></td>
+    <td><img src="../pliki/iicc.png" style="width: 100px;"/></td>
+    <td><img src="../pliki/rar.png" style="width: 100px;"/></td>
+    </tr>
+    <tr>
+    <td><center><input type="checkbox" name="img" value="1" /></center></td>
+    <td><center><input type="checkbox" name="img" value="1" /></center></td>
+    <td><center><input type="checkbox" name="img" value="1" /></center></td>
+    <td><center><input type="checkbox" name="img" value="1" /></center></td>
+    <td><center><input type="checkbox" name="img" value="1" /></center></td>
+    <td><center><input type="checkbox" name="img" value="1" /></center></td>
+    <td><center><input type="checkbox" name="img" value="1" /></center></td>
+    </tr>
+    <tr>
+    <td>Autor:</td><td><?php print $_SESSION['nick']?></td>
+    </tr>
+    <tr>
+        <td>Widocznoœæ:</td>
+        <td><input type="checkbox" name="widocznosc" value="1" checked="" /></td>
+    </tr>
+    <tr>
+        <td>Komentarze:</td><td><input type="checkbox" name="komentarze" value="1" checked="" /></td>
+    </tr>
+    <tr>
+        <td>Rodzic:</td><td><?php print $lista_rodzic ?></td>
+    </tr>
+    </table>
+    
+<div id="reset" style="height: 10px;"></div>
+    Za³¹cz plik:<input type="checkbox" name="zalaczplik" value="1" onclick="document.getElementById('zal_form').style.display = this.checked ? 'block' : 'none'; this.form.elements['userfile'].disabled =  this.form.elements['zal_tytul'].disabled = this.form.elements['zal_opis'].disabled = !this.checked" />
+    <div id="zal_form" style="display: none">
+    <table style="float:left;">
+        <tr><td>Wybierz plik:</td><td><input type="file" name="userfile" disabled="disabled"/></td></tr>
+        <tr><td>Nazwa:</td><td><input type="text" name="zal_tytul"  size="30" maxlength="25" disabled="disabled"/></td></tr>
+        <tr><td>Opis:</td><td><input type="text" name="zal_opis"  size="100" maxlength="100" disabled="disabled"/></td></tr>
+    </table>
+    </div>
+    <input type="submit" name="upload" class="przycisk" value="Dodaj podstronê" style="float:right; width: 100%; height:30px"/>
+    </form>

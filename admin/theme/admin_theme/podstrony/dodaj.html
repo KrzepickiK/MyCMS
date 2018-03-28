@@ -1,0 +1,38 @@
+﻿<h1>Dodaj nową podstronę:</h1>
+<form action="index.php?go=dps" method="post" enctype="multipart/form-data">
+    Link (treść linka do strony): <br /><input type="text" name="link"  size="15" maxlength="14"/><br/><br/>
+    Tytuł: <br /><input type="text" name="tytul"  size="30" maxlength="25"/><br/><br/>
+    Treść podstrony: </br><textarea name="tresc" rows="15" cols="90"></textarea><br />
+    Autor: <br /><input type="text" name="autorId"  size="30" maxlength="14" value="<?php print $_SESSION['nick']?>"/><br />
+    <table>
+        <tr>
+            <td>Widoczność:</td>
+            <td><SELECT NAME="widocznosc" style="width: 80px;"><OPTION value="1">Tak</OPTION><OPTION value="0">Nie</OPTION></SELECT></td>
+        </tr>
+        <tr>
+            <td>Komentarze: </td>
+            <td><SELECT NAME="komentarze" style="width: 80px;"><OPTION value="0">Nie</OPTION><OPTION value="1">Tak</OPTION></SELECT></td>
+        </tr>
+        <tr>
+            <td>W którym menu:</td>
+            <td><SELECT NAME="menu" style="width: 80px;"><OPTION value="1">Górne</OPTION><OPTION value="2">Boczne</OPTION></SELECT></td>
+        </tr>
+        <tr>
+            <td>Rodzic:</td>
+            <td><?php print $lista_rodzic ?></td>
+        </tr>
+        <tr>
+            <td>Załącz plik:</td>
+            <td><input type="checkbox" name="zalaczplik" value="1" onclick="document.getElementById('zal_form').style.display = this.checked ? 'block' : 'none'; this.form.elements['userfile'].disabled =  this.form.elements['zal_tytul'].disabled = this.form.elements['zal_opis'].disabled = !this.checked" /></td>
+        </tr>
+    </table>
+    <div id="zal_form" style="display: none">
+    <table style="float:left;">
+        <tr><td>Wybierz plik:</td><td><input type="file" name="userfile" disabled="disabled"/></td></tr>
+        <tr><td>Nazwa:</td><td><input type="text" name="zal_tytul"  size="30" maxlength="25" disabled="disabled"/></td></tr>
+        <tr><td>Opis:</td><td><input type="text" name="zal_opis"  size="100" maxlength="100" disabled="disabled"/></td></tr>
+        <tr><td>Tylko dla zalogowanych:</td><td><SELECT NAME="zal_dostepnosc" style="width: 80px;"><OPTION value="1">Tak</OPTION><OPTION value="0">Nie</OPTION></SELECT></td></tr>
+    </table>
+    </div>
+<input type="submit" name="upload" class="przycisk" value="Dodaj podstronę" style="float:right; width: 100%; height:30px"/>
+</form>
